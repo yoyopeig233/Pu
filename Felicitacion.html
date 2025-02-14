@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://www.transparenttextures.com/patterns/hearts.png'), red;
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background: pink;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .box::before {
+            content: '\1F381'; /* Emoji de regalo */
+            font-size: 50px;
+        }
+        .letter {
+            width: 250px;
+            height: 150px;
+            background: white;
+            padding: 20px;
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            transition: transform 0.5s;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .heart {
+            color: red;
+            font-size: 24px;
+        }
+        .box.open .letter {
+            transform: translateX(-50%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="openBox()">
+        <div class="letter">
+            <h2>¡Feliz San Valentín! ❤️</h2>
+            <p>Que el amor y la felicidad llenen tu día. 💕</p>
+        </div>
+    </div>
+    <script>
+        function openBox() {
+            document.querySelector('.box').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
